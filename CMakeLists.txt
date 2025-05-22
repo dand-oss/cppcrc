@@ -7,6 +7,13 @@ project(
     DESCRIPTION "A very small, fast, header-only, C++ library for generating CRCs"
 )
 
+###############
+# ASI default settings
+list(APPEND CMAKE_MODULE_PATH "$ENV{ASV_CMAKE}")
+include(asv_cmake_defaults)
+asv_cmake_defaults( )
+###############
+
 add_library(cppcrc INTERFACE)
 target_include_directories(cppcrc INTERFACE
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
